@@ -1,5 +1,3 @@
-// Product catalog — single source of truth for all product data.
-// Stock values are fixed per drop (not randomized) so counts stay consistent.
 const PRODUCTS = [
   { name: "DECONSTRUCTED JACKET", price: 420, cat: "jackets",     sizes: "S — XL",   stock: 4 },
   { name: "RAW DENIM 01",         price: 280, cat: "denim",       sizes: "28 — 36",  stock: 7 },
@@ -15,18 +13,12 @@ const PRODUCTS = [
   { name: "LOGO TEE ARCHIVE",     price: 85,  cat: "sweatshirts", sizes: "S — XXL",  stock: 7 },
 ];
 
-// Cart state — array of { name, price, qty } objects
 let cart = [];
 
-// Reusable SVG placeholder blocks (avoids repetition in template strings)
 const THUMB_SM = `<svg width="32" height="32" viewBox="0 0 32 32" class="ph"><rect width="32" height="32" fill="#555"/></svg>`;
 const THUMB_XS = `<svg width="24" height="24" viewBox="0 0 24 24" class="ph"><rect width="24" height="24" fill="#000"/></svg>`;
 
 
-/* ── NAVIGATION ─────────────────────────────────────────── */
-
-// Switch the visible page and update the active nav link.
-// This replaces browser routing since the whole site is a single HTML file.
 function go(id) {
   document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
   document.getElementById("page-" + id).classList.add("active");
@@ -40,10 +32,6 @@ function go(id) {
 }
 
 
-/* ── SHOP GRID ──────────────────────────────────────────── */
-
-// Build the product grid for a given category.
-// Passing "all" skips filtering entirely.
 function renderGrid(cat) {
   const list = cat === "all" ? PRODUCTS : PRODUCTS.filter(p => p.cat === cat);
   document.getElementById("pcount").textContent = list.length;
@@ -74,14 +62,11 @@ function filter(btn, cat) {
 }
 
 
-/* ── CART ───────────────────────────────────────────────── */
-
 function toggleCart() {
   document.getElementById("cart-overlay").classList.toggle("open");
   renderCart();
 }
 
-// Add a product to the cart, or increment quantity if it's already there.
 function addToCart(name, price) {
   const existing = cart.find(i => i.name === name);
   if (existing) {
@@ -132,7 +117,6 @@ function renderCart() {
   foot.style.display = "block";
 }
 
-// Adjust quantity; remove item automatically if it drops to zero
 function chQty(i, d) {
   cart[i].qty += d;
   if (cart[i].qty <= 0) cart.splice(i, 1);
@@ -155,10 +139,6 @@ function checkout() {
 }
 
 
-/* ── FAQ ACCORDION ──────────────────────────────────────── */
-
-// Toggle a single FAQ item open/closed.
-// Closing all items first ensures only one is ever open at a time.
 function faq(el) {
   const ans = el.querySelector(".faq-ans");
   const isOpen = el.classList.contains("open");
@@ -175,8 +155,6 @@ function faq(el) {
 }
 
 
-/* ── NEWSLETTER ─────────────────────────────────────────── */
-
 function handleNL(e) {
   e.preventDefault();
   e.target.querySelector("input").value = "";
@@ -184,10 +162,6 @@ function handleNL(e) {
 }
 
 
-/* ── TOAST NOTIFICATION ─────────────────────────────────── */
-
-// Show a short-lived notification at the bottom of the screen.
-// Resets the timer if called again before the previous toast disappears.
 let toastTmr;
 function toast(msg) {
   const t = document.getElementById("toast");
@@ -198,13 +172,9 @@ function toast(msg) {
 }
 
 
-/* ── INIT ───────────────────────────────────────────────── */
-
-// Assign base64 hero images defined in data.js
 document.getElementById("b64-img-1").src = IMAGE_1;
 document.getElementById("b64-img-2").src = IMAGE_2;
 
-// Latest strip is built once at load — it doesn't change with cart state
 document.getElementById("latest-strip").innerHTML = PRODUCTS.slice(0, 6).map(p =>
   `<div class="c-litem" role="button" tabindex="0" onclick="addToCart('${p.name}', ${p.price})" title="${p.name}"></div>`
 ).join("");
