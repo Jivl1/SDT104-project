@@ -1144,117 +1144,86 @@ opacity:.18
 }
 
 
-/* ============================================================
-   RESPONSIVE — TABLET (≤ 900px)
-   ============================================================ */
 @media (max-width: 900px) {
 
-  /* Header */
   header { padding: 0 16px; }
 
-  /* Hero */
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-l { border-right: none; border-bottom: 1px solid #000; padding: 24px 20px; }
   .hero-r { min-height: 340px; }
 
-  /* Product strips: 2 columns */
   .pstrip { grid-template-columns: repeat(2, 1fr); }
   .pcard:nth-child(2) { border-right: none; }
 
-  /* Features: 1 column */
   .feat-grid { grid-template-columns: 1fr; }
   .feat-card { border-right: none; }
 
-  /* Shop grid: 2 columns */
   .shop-grid { grid-template-columns: repeat(2, 1fr); }
   .sp:nth-child(2n) { border-right: none; }
   .sp:nth-child(3n) { border-right: 1px solid #000; }
 
-  /* About */
   .about-hero { grid-template-columns: 1fr; }
   .about-l { border-right: none; border-bottom: 1px solid #000; }
   .about-r { min-height: 300px; }
 
-  /* Manifesto */
   .manifesto { grid-template-columns: 120px 1fr; }
 
-  /* Pillars: 1 column */
   .pillars { grid-template-columns: 1fr; }
   .pillar { border-right: none; border-bottom: 1px solid #000; }
   .pillar:last-child { border-bottom: none; }
 
-  /* Footer */
   footer { grid-template-columns: 1fr 1fr; }
   .f-brand { grid-column: 1 / -1; border-right: none; border-bottom: 1px solid #000; }
   .f-copy { grid-column: 1 / -1; }
 }
 
-
-/* ============================================================
-   RESPONSIVE — MOBILE (≤ 600px)
-   ============================================================ */
 @media (max-width: 600px) {
 
-  /* Header: hide full nav, show condensed */
   header { padding: 0 12px; height: 48px; }
   .nav-link { padding: 0 8px; font-size: .56rem; }
 
-  /* Hero */
   .hero-l { padding: 20px 16px; }
   .hero-title { font-size: clamp(52px, 16vw, 72px); }
   .hero-r { min-height: 260px; }
 
-  /* Quote banner */
   .qbanner { flex-direction: column; gap: 10px; padding: 14px 16px; }
   .qmeta { text-align: left; }
 
-  /* Product strips: 1 column */
   .pstrip { grid-template-columns: 1fr; }
   .pcard { border-right: none; border-bottom: 1px solid #000; }
   .pthumb { aspect-ratio: 4/3; }
 
-  /* View all button div */
   .view-all { padding: 14px 16px; }
 
-  /* Features */
   .feat-hd { padding: 16px 16px 0; }
   .feat-body { padding: 12px; }
 
-  /* Newsletter */
   .nlsec { padding: 36px 16px; }
   .nl-form { flex-direction: column; gap: 0; }
   .nl-inp { width: 100%; }
   .nl-sub { width: 100%; margin-top: -1px; }
 
-  /* Footer: single column */
   footer { grid-template-columns: 1fr; }
   .f-col { border-right: none; border-bottom: 1px solid #000; }
   .f-col:last-of-type { border-bottom: none; }
   .f-copy { flex-direction: column; gap: 4px; }
 
-  /* Shop hero */
   .shop-hero { padding: 20px 16px; }
   .shop-title { font-size: clamp(40px, 12vw, 72px); }
 
-  /* Shop filters: horizontal scroll already works, just improve touch */
   .filter-btn { padding: 10px 14px; }
 
-  /* Shop grid: 1 column on very small screens */
   .shop-grid { grid-template-columns: 1fr; }
   .sp { border-right: none; }
   .sp:nth-child(3n) { border-right: none; }
 
-  /* Cart panel: full width */
   .c-panel { width: 100%; }
 
-  /* FAQ */
   .faq-q { padding: 14px 16px; }
   .faq-ans-in { padding: 0 16px 14px; }
 
-  /* About */
   .about-l { padding: 24px 16px; }
 
-  /* Manifesto */
   .manifesto { grid-template-columns: 1fr; }
   .mf-label { border-right: none; border-bottom: 1px solid #000; padding: 20px 16px; }
   .mf-text { padding: 20px 16px; }
