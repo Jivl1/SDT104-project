@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOID</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <span class="logo" role="button" tabindex="0" onclick="go('landing')">VOID</span>
+  <nav class="nav">
+    <span class="nav-link active" role="button" tabindex="0" id="nl-landing" onclick="go('landing')">HOME</span>
+    <span class="nav-link" role="button" tabindex="0" id="nl-shop" onclick="go('shop')">SHOP</span>
+    <span class="nav-link" role="button" tabindex="0" id="nl-about" onclick="go('about')">ABOUT</span>
+  </nav>
+  <button class="cart-btn" onclick="toggleCart()">
+    CART <span class="cart-count" id="cart-count">0</span>
+  </button>
+</header>
+
+<!-- home page -->
+<div class="page active" id="page-landing">
+
+  <section class="hero">
+    <div class="hero-l">
+      <div>
+        <h1 class="d hero-title">ARCH<br>IVE<br>DROP<br>01</h1>
+        <div class="hero-desc">
+          <p>Heavyweight materials &amp; architectural fit. Built for those who resist trend cycles.</p>
+          <button class="btn btn-black" onclick="go('shop')">SHOP NOW</button>
+        </div>
+      </div>
+      <span class="hero-drop">Drop 01 — Spring 2026</span>
+    </div>
+    <div class="hero-r">
+      <img class="hero-photo" id="b64-img-1" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="VOID Archive Drop 01" />
+      <div class="hero-badge">NEW<br>DROP<br>01</div>
+    </div>
+  </section>
+
+  <!-- scrolling text -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-item">VOID</span><span class="ticker-item ticker-sep">—</span>
+      <span class="ticker-item">ARCHIVE DROP 01</span><span class="ticker-item ticker-sep">—</span>
+      <span class="ticker-item">FORM FOLLOWS DECONSTRUCTION</span><span class="ticker-item ticker-sep">—</span>
+      <span class="ticker-item">RAW DENIM</span><span class="ticker-item ticker-sep">—</span>
+      <span class="ticker-item">CUSTOM HARDWARE</span><span class="ticker-item ticker-sep">—</span>
+      <span class="ticker-item">JAPANESE LINE</span><span class="ticker-item ticker-sep">—</span>
+      <span class="ticker-item">VOID</span><span class="ticker-item ticker-sep">—</span>
+      <span class="ticker-item">ARCHIVE DROP 01</span><span class="ticker-item ticker-sep">—</span>
+      <span class="ticker-item">FORM FOLLOWS DECONSTRUCTION</span><span class="ticker-item ticker-sep">—</span>
+      <span class="ticker-item">RAW DENIM</span><span class="ticker-item ticker-sep">—</span>
+      <span class="ticker-item">CUSTOM HARDWARE</span><span class="ticker-item ticker-sep">—</span>
+      <span class="ticker-item">JAPANESE LINE</span><span class="ticker-item ticker-sep">—</span>
+    </div>
+  </div>
+
+  <!-- products list -->
+  <section class="pstrip">
+    <div class="pcard" role="button" tabindex="0" onclick="addToCart('DECONSTRUCTED JACKET', 420)">
+      <div class="pthumb"><svg width="32" height="32" viewBox="0 0 32 32" class="ph"><rect width="32" height="32" fill="#555"/></svg><div class="pthumb-ov"></div></div>
+      <div class="pinfo">
+        <div class="pname">DECONSTRUCTED JACKET</div><div class="pprice">€420</div></div>
+      <div class="pmeta"><span class="psizes">S — XL</span><button class="padd" onclick="event.stopPropagation();addToCart('DECONSTRUCTED JACKET', 420)">+ ADD</button></div>
+    </div>
+    <div class="pcard" role="button" tabindex="0" onclick="addToCart('RAW DENIM 01', 280)">
+      <div class="pthumb"><svg width="32" height="32" viewBox="0 0 32 32" class="ph"><rect width="32" height="32" fill="#555"/></svg><div class="pthumb-ov"></div></div>
+      <div class="pinfo">
+        <div class="pname">RAW DENIM 01</div><div class="pprice">€280</div></div>
+      <div class="pmeta"><span class="psizes">28 — 36</span><button class="padd" onclick="event.stopPropagation();addToCart('RAW DENIM 01', 280)">+ ADD</button></div>
+    </div>
+    <div class="pcard" role="button" tabindex="0" onclick="addToCart('CARGO TROUSERS JP', 320)">
+      <div class="pthumb"><svg width="32" height="32" viewBox="0 0 32 32" class="ph"><rect width="32" height="32" fill="#555"/></svg><div class="pthumb-ov"></div></div>
+      <div class="pinfo">
+        <div class="pname">CARGO TROUSERS JP</div><div class="pprice">€320</div></div>
+      <div class="pmeta"><span class="psizes">28 — 38</span><button class="padd" onclick="event.stopPropagation();addToCart('CARGO TROUSERS JP', 320)">+ ADD</button></div>
+    </div>
+    <div class="pcard" role="button" tabindex="0" onclick="addToCart('LEATHER BELT 01', 95)">
+      <div class="pthumb"><svg width="32" height="32" viewBox="0 0 32 32" class="ph"><rect width="32" height="32" fill="#555"/></svg><div class="pthumb-ov"></div></div>
+      <div class="pinfo">
+        <div class="pname">LEATHER BELT 01</div><div class="pprice">€95</div></div>
+      <div class="pmeta"><span class="psizes">ONE SIZE</span><button class="padd" onclick="event.stopPropagation();addToCart('LEATHER BELT 01', 95)">+ ADD</button></div>
+    </div>
+  </section>
+
+  <div class="qbanner">
+    <span class="qtext">"NO FAITH IN TRENDS — ONLY IN CRAFT"</span>
+    <span class="qmeta">VOID<br>EST. 2020 — ARCHIVE 01</span>
+  </div>
+
+  <!-- products list -->
+  <section class="pstrip">
+    <div class="pcard" role="button" tabindex="0" onclick="addToCart('SELVEDGE DENIM JP', 360)">
+      <div class="pthumb"><svg width="32" height="32" viewBox="0 0 32 32" class="ph"><rect width="32" height="32" fill="#555"/></svg><div class="pthumb-ov"></div></div>
+      <div class="pinfo">
+        <div class="pname">SELVEDGE DENIM JP</div><div class="pprice">€360</div></div>
+      <div class="pmeta"><span class="psizes">28 — 38</span><button class="padd" onclick="event.stopPropagation();addToCart('SELVEDGE DENIM JP', 360)">+ ADD</button></div>
+    </div>
+    <div class="pcard" role="button" tabindex="0" onclick="addToCart('LEATHER JACKET 02', 680)">
+      <div class="pthumb"><svg width="32" height="32" viewBox="0 0 32 32" class="ph"><rect width="32" height="32" fill="#555"/></svg><div class="pthumb-ov"></div></div>
+      <div class="pinfo">
+        <div class="pname">LEATHER JACKET 02</div><div class="pprice">€680</div></div>
+      <div class="pmeta"><span class="psizes">S — XL</span><button class="padd" onclick="event.stopPropagation();addToCart('LEATHER JACKET 02', 680)">+ ADD</button></div>
+    </div>
+    <div class="pcard" role="button" tabindex="0" onclick="addToCart('BUCKLE BOOTS 01', 440)">
+      <div class="pthumb"><svg width="32" height="32" viewBox="0 0 32 32" class="ph"><rect width="32" height="32" fill="#555"/></svg><div class="pthumb-ov"></div></div>
+      <div class="pinfo">
+        <div class="pname">BUCKLE BOOTS 01</div><div class="pprice">€440</div></div>
+      <div class="pmeta"><span class="psizes">40 — 46</span><button class="padd" onclick="event.stopPropagation();addToCart('BUCKLE BOOTS 01', 440)">+ ADD</button></div>
+    </div>
+    <div class="pcard" role="button" tabindex="0" onclick="addToCart('OVERSIZED CREWNECK', 195)">
+      <div class="pthumb"><svg width="32" height="32" viewBox="0 0 32 32" class="ph"><rect width="32" height="32" fill="#555"/></svg><div class="pthumb-ov"></div></div>
+      <div class="pinfo">
+        <div class="pname">OVERSIZED CREWNECK</div><div class="pprice">€195</div></div>
+      <div class="pmeta"><span class="psizes">S — XXL</span><button class="padd" onclick="event.stopPropagation();addToCart('OVERSIZED CREWNECK', 195)">+ ADD</button></div>
+    </div>
+  </section>
+
+  <div class="view-all">
+    <button class="btn btn-outline" onclick="go('shop')">VIEW ALL PRODUCTS</button>
+  </div>
+
+  <!-- features -->
+  <section class="feat-sec">
+    <div class="feat-hd">Features</div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-thumb"><svg width="36" height="36" viewBox="0 0 36 36" class="ph"><rect width="36" height="36" fill="#888"/></svg></div>
+        <div class="feat-body"><div class="feat-title">JAPANESE RAW DENIM</div><div class="feat-desc">14oz raw selvedge sourced from Okayama mills. Structured to hold architectural shape, developing a patina unique to its wearer.</div></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-thumb"><svg width="36" height="36" viewBox="0 0 36 36" class="ph"><rect width="36" height="36" fill="#888"/></svg></div>
+        <div class="feat-body"><div class="feat-title">CUSTOM HARDWARE</div><div class="feat-desc">All closures, D-rings, and buckles are custom-cast in matte gunmetal. No plastic. Every detail is structural and intentional.</div></div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-thumb"><svg width="36" height="36" viewBox="0 0 36 36" class="ph"><rect width="36" height="36" fill="#888"/></svg></div>
+        <div class="feat-body"><div class="feat-title">ZERO TREND DESIGN</div><div class="feat-desc">Designed without reference to seasonal trends. Each piece is archival in intention — built to outlast the cycle.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- email signup -->
+  <section class="nlsec">
+    <h2 class="d nl-title">JOIN THE<br>ARCHIVE</h2>
+    <form class="nl-form" onsubmit="handleNL(event)">
+      <input class="nl-inp" type="email" placeholder="YOUR EMAIL ADDRESS" required />
+      <button class="nl-sub" type="submit">JOIN</button>
+    </form>
+  </section>
+
+<footer>
+    <div class="f-brand"><span class="f-logo">VOID</span><p class="f-tag">No faith in trends.<br>Only in craft. Est. 2020.</p></div>
+    <div class="f-col"><div class="f-col-title">Shop</div><div class="f-links"><a href="#" onclick="go(\'shop\'); return false;">All Products</a><a href="#" onclick="go(\'shop\'); return false;">Jackets</a><a href="#" onclick="go(\'shop\'); return false;">Denim</a><a href="#" onclick="go(\'shop\'); return false;">Shoes</a><a href="#" onclick="go(\'shop\'); return false;">Japanese Line</a></div></div>
+    <div class="f-col"><div class="f-col-title">Info</div><div class="f-links"><a href="#" onclick="go(\'about\'); return false;">About</a><a href="#" onclick="go(\'about\'); return false;">Manifesto</a><a href="#">Sizing Guide</a><a href="#">Shipping &amp; Returns</a></div></div>
+    <div class="f-col"><div class="f-col-title">Follow</div><div class="f-links"><a href="mailto:info@void-archive.com">info@void-archive.com</a><a href="#">Press</a></div></div>
+    <div class="f-copy"><span>© 2026 VOID. ALL RIGHTS RESERVED.</span><span>ARCHIVE DROP 01 — SPRING 2026</span></div>
+  </footer>
+</div>
+
+<!-- shop page -->
+<div class="page" id="page-shop">
+  <section class="shop-hero">
+    <div><h1 class="d shop-title">ARCHIVE<br>DROP 01</h1></div>
+    <div class="shop-meta"><p>Showing <strong id="pcount">12</strong> products</p><p>Spring / Summer 2026</p></div>
+  </section>
+  <div class="shop-filters">
+    <button class="filter-btn active" onclick="filter(this,'all')">ALL</button>
+    <button class="filter-btn" onclick="filter(this,'jackets')">JACKETS</button>
+    <button class="filter-btn" onclick="filter(this,'denim')">DENIM</button>
+    <button class="filter-btn" onclick="filter(this,'shoes')">SHOES</button>
+    <button class="filter-btn" onclick="filter(this,'belts')">BELTS</button>
+    <button class="filter-btn" onclick="filter(this,'sweatshirts')">SWEATSHIRTS</button>
+    <button class="filter-btn" onclick="filter(this,'leather')">LEATHER</button>
+  </div>
+  <div class="shop-grid" id="shop-grid"></div>
+
+<footer>
+    <div class="f-brand"><span class="f-logo">VOID</span><p class="f-tag">No faith in trends.<br>Only in craft.</p></div>
+    <div class="f-col"><div class="f-col-title">Shop</div><div class="f-links"><a href="#" onclick="go(\'shop\'); return false;">All Products</a><a href="#" onclick="go(\'landing\'); return false;">Home</a></div></div>
+    <div class="f-col"><div class="f-col-title">Info</div><div class="f-links"><a href="#" onclick="go(\'about\'); return false;">About</a><a href="#">Sizing Guide</a></div></div>
+    <div class="f-col"><div class="f-col-title">Follow</div><div class="f-links"><a href="https://www.instagram.com/void/" target="_blank">Instagram</a></div></div>
+    <div class="f-copy"><span>© 2026 VOID.</span><span>ARCHIVE DROP 01</span></div>
+  </footer>
+</div>
+
+<!-- about page -->
+<div class="page" id="page-about">
+  <section class="about-hero">
+    <div class="about-l">
+      <h1 class="d about-title">VOID</h1>
+      <p class="about-sub">Raw materials, architectural fit, utilitarian details. Built for those who embrace the void.</p>
+    </div>
+    <div class="about-r">
+      <img class="about-photo" id="b64-img-2" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="VOID" />
+    </div>
+  </section>
+
+  <section class="manifesto">
+    <div class="mf-label">MANIFESTO</div>
+    <div class="mf-text">VOID IS BUILT ON THE REJECTION OF FAST FASHION AND SEASONAL CYCLES. WE FOCUS ON RAW MATERIALS, HEAVYWEIGHT CONSTRUCTION, AND UTILITARIAN DETAILS THAT RESIST THE DISPOSABLE. EACH PIECE IS AN ARCHIVE OBJECT — DESIGNED TO OUTLAST ITS ERA.</div>
+  </section>
+
+  <section class="pillars">
+    <div class="pillar"><div class="pillar-title">FORM</div><div class="pillar-text">Every silhouette begins with a structural proposition. We design from the inside out — construction first, aesthetics second.</div></div>
+    <div class="pillar"><div class="pillar-title">MATERIAL</div><div class="pillar-text">Japanese selvedge denim, Italian raw canvas, hand-tanned leather. Materials chosen for their structural integrity and ability to develop character over time.</div></div>
+    <div class="pillar"><div class="pillar-title">ABSENCE</div><div class="pillar-text">No logos on the outside. No seasonal colours. No ornament for its own sake. What remains after removal is the garment.</div></div>
+  </section>
+
+  <section class="faq-sec">
+    <div class="d faq-hd">FAQ</div>
+    <div>
+      <div class="faq-item" role="button" tabindex="0" onclick="faq(this)"><div class="faq-q"><span>Do you restock sold-out pieces?</span><span class="faq-tog">+</span></div><div class="faq-ans"><div class="faq-ans-in">No. Each drop is a limited archive edition. Once it is gone, it is gone. We do not mass-produce and we do not restock — this is intentional.</div></div></div>
+      <div class="faq-item" role="button" tabindex="0" onclick="faq(this)"><div class="faq-q"><span>What is your sizing philosophy?</span><span class="faq-tog">+</span></div><div class="faq-ans"><div class="faq-ans-in">Our pieces are designed with an oversized architectural fit. We recommend sizing up if in doubt. All measurements are listed per product.</div></div></div>
+      <div class="faq-item" role="button" tabindex="0" onclick="faq(this)"><div class="faq-q"><span>Where are garments produced?</span><span class="faq-tog">+</span></div><div class="faq-ans"><div class="faq-ans-in">Production is split between Japan (denim, Japanese Line) and Portugal (outerwear, leather). Small batches only — never factories, always ateliers.</div></div></div>
+      <div class="faq-item" role="button" tabindex="0" onclick="faq(this)"><div class="faq-q"><span>What is your return policy?</span><span class="faq-tog">+</span></div><div class="faq-ans"><div class="faq-ans-in">Returns within 14 days of delivery, unworn, with tags attached. No returns on sale items or made-to-order pieces.</div></div></div>
+    </div>
+  </section>
+
+<footer>
+    <div class="f-brand"><span class="f-logo">VOID</span><p class="f-tag">No faith in trends.<br>Only in craft.</p></div>
+    <div class="f-col"><div class="f-col-title">Shop</div><div class="f-links"><a href="#" onclick="go(\'shop\'); return false;">All Products</a><a href="#" onclick="go(\'landing\'); return false;">Home</a></div></div>
+    <div class="f-col"><div class="f-col-title">Info</div><div class="f-links"><a href="#" onclick="go(\'about\'); return false;">About</a><a href="#">Sizing Guide</a></div></div>
+    <div class="f-col"><div class="f-col-title">Follow</div><div class="f-links"><a href="https://www.instagram.com/nofaithstudios/" target="_blank">Instagram</a></div></div>
+    <div class="f-copy"><span>© 2026 VOID.</span><span>ARCHIVE DROP 01</span></div>
+  </footer>
+</div>
+
+<!-- cart sidebar -->
+<div class="c-overlay" id="cart-overlay">
+  <div class="c-backdrop" role="button" tabindex="0" aria-label="Close cart" onclick="toggleCart()"></div>
+  <div class="c-panel">
+    <div class="c-top-logo">VOID</div>
+    <div class="c-header">
+      <div class="c-title">♦ CART</div>
+      <button class="c-close" onclick="toggleCart()">×</button>
+    </div>
+    <div class="c-body" id="cart-body"></div>
+    <div class="c-latest">
+      <div class="c-latest-title">Latest Collection</div>
+      <div class="c-latest-strip" id="latest-strip"></div>
+    </div>
+    <div class="c-footer" id="cart-foot" style="display:none">
+      <div class="c-subtotal"><span>Subtotal</span><span id="cart-total">€0</span></div>
+      <button class="c-checkout" onclick="checkout()">CHECKOUT</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">
