@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDT104 Homework 10</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">SDT 104 • Homework 10</p>
+      <h1>Introduction to JavaScript</h1>
+      <p class="lead">
+        This page contains the five JavaScript tasks, their source code, and an in-browser runner
+        that mirrors the console output used in the report.
+      </p>
+      <div class="links">
+        <a class="button primary" href="https://github.com/jivl1/SDT104-project/tree/main/hw10" target="_blank" rel="noreferrer">GitHub Folder</a>
+        <a class="button" href="SDT104-hw10-illia.docx">Report (.docx)</a>
+      </div>
+    </header>
+
+    <section class="task-grid" id="task-grid"></section>
+  </main>
+
+  <template id="task-template">
+    <article class="task-card">
+      <div class="task-header">
+        <div>
+          <p class="task-kicker"></p>
+          <h2></h2>
+        </div>
+        <button class="button run-button" type="button">Run Task</button>
+      </div>
+      <div class="panel-group">
+        <section class="panel">
+          <div class="panel-title">Source</div>
+          <pre class="code-block"></pre>
+        </section>
+        <section class="panel">
+          <div class="panel-title">Console Output</div>
+          <pre class="console-block">Press "Run Task" to execute this file.</pre>
+        </section>
+      </div>
+    </article>
+  </template>
+
+  <script src="viewer.js"></script>
+</body>
+</html>
